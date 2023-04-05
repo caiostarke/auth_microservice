@@ -18,7 +18,7 @@ type Repository struct {
 
 // constructor function for instantiate a repository struct
 func New() (*Repository, error) {
-	db, err := sql.Open("mysql", "root:kaer@/hunt")
+	db, err := sql.Open("mysql", os.Getenv("MYSQL_DB_DNS"))
 	if err != nil {
 		return &Repository{}, err
 	}
